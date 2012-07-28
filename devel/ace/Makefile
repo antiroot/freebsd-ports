@@ -37,15 +37,6 @@ MAN1=    ace_gperf.1
 
 .include <bsd.port.pre.mk>
 
-#.if (${OSVERSION} >= 601103 && ${OSVERSION} < 700000) || ${OSVERSION} >= 700015
-#EXTRA_PATCHES+=	${FILESDIR}/patch-ace__OS_NS_netdb.inl
-#.endif
-
-#.if ${OSVERSION} >= 700110 && ${OSVERSION} < 800000
-#EXTRA_PATCHES+=	${FILESDIR}/patch-ace__OS_NS_Thread.h
-#EXTRA_PATCHES+= ${FILESDIR}/patch-ace__OS_NS_signal.h
-#.endif
-
 post-extract:
 	@${MKDIR} ${BUILD_WRKSRC}
 

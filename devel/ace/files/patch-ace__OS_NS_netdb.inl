@@ -1,14 +1,5 @@
 --- ace/OS_NS_netdb.inl.orig	2012-07-27 13:11:29.000000000 -0500
 +++ ace/OS_NS_netdb.inl	2012-07-27 13:13:36.000000000 -0500
-@@ -6,6 +6,8 @@
- #include "ace/OS_NS_string.h"
- #include "ace/OS_NS_errno.h"
- 
-+#include <sys/param.h>
-+
- #if defined (ACE_LACKS_NETDB_REENTRANT_FUNCTIONS)
- # if defined (ACE_MT_SAFE) && (ACE_MT_SAFE != 0)
- #   define ACE_NETDBCALL_RETURN(OP,TYPE,FAILVALUE,TARGET,SIZE) \
 @@ -125,7 +127,7 @@
        *h_errnop = h_errno;
        return (struct hostent *) 0;
